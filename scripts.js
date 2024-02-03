@@ -96,13 +96,10 @@ const atualizaLista = (temFiltro = false, filtro) => {
         } else{
             btn2.addEventListener('click', () => {
                 const isEditable = span.getAttribute('contenteditable')
-                const statusMessage = document.getElementById('statusMessage')
 
                 if(isEditable){
                     span.removeAttribute('contenteditable')
                     span.style.border = 'solid 2px #555'
-                    statusMessage.innerHTML = ''
-                    statusMessage.style.display = 'none'
                     btn2.title = 'Editar'
                     btn2.innerHTML = '<i class="aumentarIcon fa-solid fa-pen-to-square"></i>'
 
@@ -115,8 +112,6 @@ const atualizaLista = (temFiltro = false, filtro) => {
                 } else{
                     span.setAttribute('contenteditable', true)
                     span.style.border = '2px solid rgb(66, 160, 248)'
-                    statusMessage.innerHTML = '<b>Edição em andamento!</b> Confirme as alterações clicando no ícone de salvar.'
-                    statusMessage.style.display = 'inline'
                     btn2.innerHTML = '<i class="aumentarIcon fa-solid fa-floppy-disk"></i>'
                     btn2.title = 'Salvar'
                 }
