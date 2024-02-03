@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <h1 id="titulo">Lista de Tarefas</h1>
+
+    <div class="centralizar">
+        <div class="cabecalho">
+            <form id="form">
+                <span class="linha"></span><input type="text" name="addTarefa" id="addTarefa"
+                    placeholder="Adicionar tarefa">
+                <button class="btnAdd" type="submit">ADD</button><span class="linha"></span>
+            </form>
+
+            <div class="filtros-css">
+                <select name="filtros" id="filtros" onchange="filtrarTarefas(this)">
+                    <option value="-1">Todos</option>
+                    <option value="concluidos">Concluídos</option>
+                    <option value="nconcluidos">Não concluídos</option>
+                </select>
+            </div>
+
+            <div class="divInputPesquisa">
+                <input type="text" name="pesquisa" id="pesquisa" onkeyup="pesquisar()" placeholder="Pesquisar">
+                <span id="iconeDentroInputPesquisa"><i class="fas fa-search"></i></span>
+            </div>
+        </div>
+
+        <div class="alinhar-ul">
+            <ul id="lista"></ul>
+        </div>
+
+        <div id="statusMessage"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+    
+</body>
+</html>
